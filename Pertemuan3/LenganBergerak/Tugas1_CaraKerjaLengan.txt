@@ -1,0 +1,9 @@
+ARSY THARIQ MUNAWAR 
+24060124120009
+GTI A1 2026
+
+Kode ini pada dasarnya bikin simulasi lengan robot sederhana yang terdiri dari dua bagian, yaitu lengan atas (shoulder) dan lengan bawah (elbow). Cara kerjanya memanfaatkan transformasi di OpenGL seperti translasi untuk menggeser posisi, rotasi untuk memutar objek, dan skala untuk mengubah bentuk objek. Awalnya, program membersihkan layar lalu mengatur posisi awal sistem koordinat. Setelah itu, titik awal dipindahkan ke posisi bahu, kemudian lengan atas diputar sesuai nilai variabel shoulder. Objek lengan digambar menggunakan glutWireCube yang diskalakan agar bentuknya memanjang seperti batang.
+
+Setelah lengan atas selesai digambar, program melakukan translasi ke ujung lengan atas yang menjadi titik siku. Di titik ini, dilakukan rotasi kedua menggunakan nilai elbow untuk menggerakkan lengan bawah. Karena urutan transformasi ini saling berkaitan, pergerakan siku akan mengikuti posisi bahu. Jadi kalau bahu diputar, posisi lengan bawah juga otomatis ikut berubah. Penggunaan glPushMatrix dan glPopMatrix sangat penting karena berfungsi menyimpan dan mengembalikan kondisi transformasi, sehingga setiap bagian lengan bisa dimanipulasi tanpa mengganggu bagian lainnya.
+
+Selain itu, fungsi reshape mengatur tampilan perspektif dan posisi kamera supaya objek terlihat dalam ruang tiga dimensi. Fungsi keyboard memungkinkan pengguna berinteraksi langsung dengan menekan tombol s atau S untuk menambah atau mengurangi sudut bahu, serta e atau E untuk mengatur sudut siku. Setiap perubahan sudut akan memanggil glutPostRedisplay sehingga layar langsung diperbarui. Dengan begitu, gerakan lengan robot terlihat halus dan berjalan secara real-time sesuai input dari pengguna.
